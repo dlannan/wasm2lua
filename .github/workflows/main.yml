@@ -17,13 +17,11 @@ jobs:
       - name: npm install
         run: |
           npm install -g wasm2lua
-          npm install -g lua-webidl
         env:
           CI: true
       - name: npm package
         run: |
           pkg ./js/bin/wasm2lua.js
-          pkg ./js/bin/lua-webidl.js 
         env:
           CI: true
       - name: Archive results
