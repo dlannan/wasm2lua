@@ -17,18 +17,17 @@ jobs:
       - name: npm install
         run: |
           npm install -g pkg
-          npm install 
+          npm install --production
         env:
           CI: true
       - name: npm package
         run: |
-          pkg --out-path ./bin --config ./package.json ./js/bin/wasm2lua.js
-          pkg --out-path ./bin --config ./package.json ./js/bin/lua-webidl.js 
+          pkg --out-path ./bin .
         env:
           CI: true
       - name: Archive results
         uses: actions/upload-artifact@v4
         with:
-          name: Linux node app
+          name: Multi Platform Builds
           path: |
             ./bin
