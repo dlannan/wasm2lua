@@ -22,8 +22,8 @@ jobs:
           CI: true
       - name: npm package
         run: |
-          pkg --out-path ./bin ./package.json ./js/bin/wasm2lua.js
-          pkg --out-path ./bin ./package.json ./js/bin/lua-webidl.js 
+          pkg --out-path ./bin -c ./package.json ./js/bin/wasm2lua.js
+          pkg --out-path ./bin -c ./package.json ./js/bin/lua-webidl.js 
         env:
           CI: true
       - name: Archive results
