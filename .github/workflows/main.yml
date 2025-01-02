@@ -31,7 +31,4 @@ jobs:
         with:
           name: Linux node app
           path: |
-            ./js/bin/wasm2lua.js
-            ./js/bin/wasm2lua.js.map
-            ./js/bin/lua-webidl.js 
-            ./js/bin/lua-webidl.js.map
+            ./js/bin
