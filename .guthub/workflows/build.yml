@@ -1,4 +1,4 @@
-name: "sokol-shared"
+name: "build-wasm2lua"
 
 on:
   push:
