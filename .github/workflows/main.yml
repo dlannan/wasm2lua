@@ -14,18 +14,24 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 12.x
-      - name: npm install and test
+      - name: npm install
         run: |
-          mkdir -p ./install/wasm2lua/node_modules
-          npm install --prefix ./install/wasm2lua wasm2lua
-          mkdir -p ./install/webidl/node_modules
-          npm install --prefix ./install/web-idl web-idl
+          npm install -g wasm2lua
+          npm install -g lua-webidl
         env:
           CI: true
-
+      - name: npm package
+        run: |
+          pkg ./js/bin/wasm2lua.js
+          pkg ./js/bin/lua-webidl.js 
+        env:
+          CI: true
       - name: Archive results
         uses: actions/upload-artifact@v4
         with:
           name: Linux node app
           path: |
-            ./install/wasm2lua
+            ./js/bin/wasm2lua.js
+            ./js/bin/wasm2lua.js.map
+            ./js/bin/lua-webidl.js 
+            ./js/bin/lua-webidl.js.map
