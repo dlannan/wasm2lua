@@ -17,6 +17,7 @@ jobs:
       - name: npm install
         run: |
           npm install -g pkg
+          npm install .
         env:
           CI: true
       - name: npm package
