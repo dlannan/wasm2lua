@@ -16,6 +16,7 @@ jobs:
           node-version: 12.x
       - name: npm install
         run: |
+          npm install -g pkg
           npm install -g wasm2lua
         env:
           CI: true
