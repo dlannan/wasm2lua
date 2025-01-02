@@ -9,6 +9,7 @@
   },
   "pkg": {
     "scripts": "js/**/*.js",
+    "assets": ["resources/**/*.lua", "resources/**/*.png",  "resources/**/*.js" ],
     "outputPath": "dist"
   },  
   "keywords": [
