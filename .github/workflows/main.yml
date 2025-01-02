@@ -19,3 +19,13 @@ jobs:
           npm install --production
         env:
           CI: true
+
+      - name: Archive results
+        uses: actions/upload-artifact@v4
+        with:
+          name: Linux node app
+          path: |
+            ./js/bin/wasm2lua.js
+            ./js/bin/wasm2lua.js.map
+            ./js/bin/lua-webidl.js 
+            ./js/bin/lua-webidl.js.map
