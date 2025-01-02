@@ -16,7 +16,10 @@ jobs:
           node-version: 12.x
       - name: npm install and test
         run: |
-          npm install --production
+          mkdir -p ./install/wasm2lua/node_modules
+          npm install --prefix ./install/wasm2lua wasm2lua
+          mkdir -p ./install/webidl/node_modules
+          npm install --prefix ./install/web-idl web-idl
         env:
           CI: true
 
@@ -25,7 +28,4 @@ jobs:
         with:
           name: Linux node app
           path: |
-            ./js/bin/wasm2lua.js
-            ./js/bin/wasm2lua.js.map
-            ./js/bin/lua-webidl.js 
-            ./js/bin/lua-webidl.js.map
+            ./install/wasm2lua
