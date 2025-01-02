@@ -7,6 +7,10 @@
     "test": "node js/testsuite.js",
     "build": "tsc -p ."
   },
+  "pkg": {
+    "scripts": "js/**/*.js",
+    "outputPath": "dist"
+  },  
   "keywords": [
     "wasm",
     "lua",
